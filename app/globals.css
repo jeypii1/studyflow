@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+button { cursor: pointer; }
+
+* { box-sizing: border-box; }
+
+button, input, select { font: inherit; }
+
+.dark .app-shell { background: #15151a; color: #f4f4f6; }
+.dark header { background: rgba(21, 21, 26, .88); border-color: rgba(255,255,255,.08); }
+.dark header label,
+.dark header button,
+.dark .summary-card,
+.dark .panel,
+.dark .task-row,
+.dark .modal-card { background-color: #222228; border-color: rgba(255,255,255,.08); }
+.dark input, .dark select { color: #f4f4f6; }
+.dark option { background: #222228; }
+.dark .modal-card { color: #f4f4f6; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
